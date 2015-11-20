@@ -47,7 +47,7 @@ public class GenericSession {
         return this;
     }
 
-    public void sendToAll(TransactionConfirmationEmail transactionConfirmationEmail, String[] recipients) throws MessagingException {
+    public void sendToAll(EmailTemplate transactionConfirmationEmail, String[] recipients) throws MessagingException {
         for(String recipient: recipients){
             MimeMessage message = getMimeMessage(recipient, transactionConfirmationEmail.subject, transactionConfirmationEmail.body);
             send(message);

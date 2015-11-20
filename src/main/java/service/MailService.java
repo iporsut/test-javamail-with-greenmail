@@ -8,17 +8,17 @@ import javax.mail.internet.AddressException;
  */
 
 public class MailService {
-    private TransactionConfirmationEmail transactionConfirmationEmail;
+    private EmailTemplate emailTemplate;
     private GenericSession session;
 
-    public MailService(GenericSession session, TransactionConfirmationEmail email) {
+    public MailService(GenericSession session, EmailTemplate emailTemplate) {
         this.session = session;
-        this.transactionConfirmationEmail = email;
+        this.emailTemplate = emailTemplate;
     }
 
     public void send(String[] recipients) throws MessagingException {
         try {
-            session.sendToAll(transactionConfirmationEmail, recipients);
+            session.sendToAll(emailTemplate, recipients);
         }
         catch (AddressException ae) {
             ae.printStackTrace();

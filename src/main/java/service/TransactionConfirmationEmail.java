@@ -1,8 +1,6 @@
 package service;
 
-public class TransactionConfirmationEmail {
-    public String subject;
-    public String body;
+public class TransactionConfirmationEmail extends EmailTemplate {
 
     public TransactionConfirmationEmail() {
         subject = "Notice of transaction";
