@@ -1,14 +1,12 @@
 import com.icegreen.greenmail.util.GreenMail;
 import com.icegreen.greenmail.util.GreenMailUtil;
 import com.icegreen.greenmail.util.ServerSetup;
-import com.sun.tools.javac.jvm.Gen;
-import org.junit.After;
-import org.junit.Before;
 import org.junit.Test;
-import service.*;
+import service.GenericSession;
+import service.MailService;
+import service.TransactionConfirmationEmail;
 
 import javax.mail.MessagingException;
-import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 

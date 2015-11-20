@@ -1,9 +1,5 @@
 import service.GenericSession;
 
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import java.util.Properties;
-
 /**
  * Created by roof on 11/18/15.
  */
