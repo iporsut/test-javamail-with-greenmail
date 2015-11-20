@@ -21,8 +21,7 @@ public class MailService {
 
     public void send(String[] to) throws MessagingException {
         try {
-            List<String> recipients = Arrays.asList(to);
-            for(String recipient: recipients){
+            for(String recipient: to){
                 MimeMessage message = session.getMimeMessage(recipient, transactionConfirmationEmail.subject, transactionConfirmationEmail.body);
                 session.send(message);
             }
