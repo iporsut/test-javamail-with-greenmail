@@ -46,4 +46,11 @@ public class GenericSession {
         session = Session.getDefaultInstance(props);
         return this;
     }
+
+    public void sendToAll(TransactionConfirmationEmail transactionConfirmationEmail, String[] recipients) throws MessagingException {
+        for(String recipient: recipients){
+            MimeMessage message = getMimeMessage(recipient, transactionConfirmationEmail.subject, transactionConfirmationEmail.body);
+            send(message);
+        }
+    }
 }

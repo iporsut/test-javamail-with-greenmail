@@ -2,9 +2,6 @@ package service;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.AddressException;
-import javax.mail.internet.MimeMessage;
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * Created by roof on 11/18/15.
@@ -19,12 +16,9 @@ public class MailService {
         this.transactionConfirmationEmail = email;
     }
 
-    public void send(String[] to) throws MessagingException {
+    public void send(String[] recipients) throws MessagingException {
         try {
-            for(String recipient: to){
-                MimeMessage message = session.getMimeMessage(recipient, transactionConfirmationEmail.subject, transactionConfirmationEmail.body);
-                session.send(message);
-            }
+            session.sendToAll(transactionConfirmationEmail, recipients);
         }
         catch (AddressException ae) {
             ae.printStackTrace();
